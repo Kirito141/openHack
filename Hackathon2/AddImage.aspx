@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="AddImage.aspx.cs" Inherits="Hackathon2.AddImage" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="AddImage.aspx.cs" Inherits="Hackathon2.AddImage" Async="true" %>
 
 <!DOCTYPE html>
 

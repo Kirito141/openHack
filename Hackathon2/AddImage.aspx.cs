@@ -1,6 +1,8 @@
-﻿using System;
+﻿using Hackathon2.APIs;
+using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -58,7 +60,7 @@ namespace Hackathon2
         //    Response.Redirect("~/Default.aspx");
         //}
 
-        protected void btnUpload_Click(object sender, EventArgs e)
+        protected async void btnUpload_Click(object sender, EventArgs e)
         {
             System.IO.Stream fs = FileUpload2.PostedFile.InputStream;
             System.IO.BinaryReader br = new System.IO.BinaryReader(fs);
@@ -67,6 +69,22 @@ namespace Hackathon2
             Image1.ImageUrl = base64String;
             string finalIMG = Image1.ImageUrl;
 
+            try
+            {
+                // Call a separate method to send the base64 image data to the REST service
+                var oauthClient = new OAuthClient();
+                string accessToken = await oauthClient.GetAccessTokenAsync();
+                var restApiClient = new RestApiClient(accessToken);
+                string response = await restApiClient.SendImage(finalIMG);
+                string fileName = OCRRequests.GetFileNameFromOCRResponse1(response);
+                // call second service
+                   var response2 = await restApiClient.GetFileDataAsync(fileName);
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Exception: {ex.Message}");
+            }
         }
     }
 }
