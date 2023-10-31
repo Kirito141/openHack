@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.IO;
 using System.Linq;
+using System.Text;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -79,7 +80,8 @@ namespace Hackathon2
                 string fileName = OCRRequests.GetFileNameFromOCRResponse1(response);
                 // call second service
                    var response2 = await restApiClient.GetFileDataAsync(fileName);
-
+                string utfString = Encoding.UTF8.GetString(response2, 0, response2.Length); 
+                Console.WriteLine(utfString);
             }
             catch (Exception ex)
             {
