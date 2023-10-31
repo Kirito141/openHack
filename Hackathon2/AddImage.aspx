@@ -29,12 +29,13 @@
         }
     </style>
 </head>
-  <body>
+  <body class="bodydetails">
+      <h1 class="details">Upload Health File</h1>
     <form id="form2" runat="server">
-      <asp:FileUpload ID="FileUpload2" runat="server" />
-      <asp:Button ID="btnUpload" runat="server" Text="Upload" onclick="btnUpload_Click" />
-      <hr />
+      <asp:FileUpload ID="FileUpload2" runat="server"  class="file-upload"/>
+      <asp:Button ID="btnUpload" runat="server" Text="Upload Health Document" onclick="btnUpload_Click" class="submit-button"/>
       <asp:Image ID="Image1" Visible = "false" runat="server" Height = "100" Width = "100" />
     </form>
   </body>
 </html>
+

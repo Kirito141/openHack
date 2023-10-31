@@ -1,5 +1,60 @@
-﻿body {
+﻿/*body {
     #btnUpload {
                    color:blue;
                }
+}*/
+.bodydetails {
+    font-family: sans-serif;
+    background-image: url(https://storage.googleapis.com/indie-hackers.appspot.com/group-icons/healthcare-hackers/tNkpwcWmnvVo7Mb3Bpqye7zdeKG3);
+    background-size: cover;
+}
+.details {
+    color: cadetblue;
+    margin-top: 300px;
+    margin-right: 1600px;
+}
+
+.container {
+    width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+.file-upload {
+    width: 300px;
+    /* margin-bottom: 10px; */
+    /* border: 1px solid #ccc; */
+    padding: 12px;
+    /* background-color: honeydew; */
+    /* border-radius: 10px;*/
+}
+
+.submit-button {
+    border-radius: 10px;
+    background-color: cadetblue;
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.progress-bar {
+    width: 200px;
+    height: 10px;
+    background-color: #ccc;
+}
+
+.progress-inner {
+    width: 0%;
+    height: 100%;
+    background-color: #000;
+}
+.success {
+    color: green;
+    font-weight: bold;
 }

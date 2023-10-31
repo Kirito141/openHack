@@ -80,8 +80,10 @@ namespace Hackathon2
                 string fileName = OCRRequests.GetFileNameFromOCRResponse1(response);
                 // call second service
                    var response2 = await restApiClient.GetFileDataAsync(fileName);
-                string utfString = Encoding.UTF8.GetString(response2, 0, response2.Length); 
+                string utfString = Encoding.UTF8.GetString(bytes, 0, bytes.Length); 
                 Console.WriteLine(utfString);
+                string message = " File uploaded successfully! Please check the API response for required output";
+                Response.Write("<span class='success'>" + message + "</span>");
             }
             catch (Exception ex)
             {
